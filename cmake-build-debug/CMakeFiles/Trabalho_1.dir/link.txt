@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/Trabalho_1.dir/IndexInverted.c.o CMakeFiles/Trabalho_1.dir/treePatricia.c.o CMakeFiles/Trabalho_1.dir/WordTad.c.o CMakeFiles/Trabalho_1.dir/main.c.o CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o -o Trabalho_1 
