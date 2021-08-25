@@ -8,8 +8,7 @@ void iniciaWord(Word *word){
     word->inicio = NULL;
     word->fim = NULL;
     word->tamanho = 0;
-    word->index.idDoc = 0;
-    word->index.qtde = 0;
+    startIndex(&word->index);
 }
 void insereLetra(Word *word,char letra){
     if (word->fim == NULL){
@@ -39,22 +38,38 @@ char minLetter(char letra){
 void insereWord(Word *word,char *palavra){
     unsigned long tamanho = strlen(palavra);
     for (unsigned long i = 0;i<tamanho;i++){
-        if(palavra[i] != '.')
+        if(palavra[i] != '.' && palavra[i] != '?')
             insereLetra(word, minLetter(palavra[i]));
     }
-    word->index.qtde++;
+    word->palavraIndex.qtde = 1;
+}
+char letraPosition(int position,Word *word){
+    int valor = 0;
+    Apontador auxiliar = word->inicio;
+    if(position <= word->tamanho){
+        while (auxiliar != NULL){
+            if(valor == position){
+                return auxiliar->letra;
+            }
+            valor = valor + 1;
+            auxiliar = auxiliar->prox;
+        }
+    }
+    return word->inicio->letra;
 }
 unsigned char letraReturn(unsigned char position,Word *word){
     int valor = 0;
     Apontador auxiliar = word->inicio;
-    while (auxiliar != NULL){
-        if(valor == position){
-            return auxiliar->letra;
+    if(position <= word->tamanho){
+        while (auxiliar != NULL){
+            if(valor == position){
+                return auxiliar->letra;
+            }
+            valor = valor + 1;
+            auxiliar = auxiliar->prox;
         }
-        valor = valor + 1;
-        auxiliar = auxiliar->prox;
     }
-    return '\0';
+    return word->inicio->letra;
 }
 
 int wordCompare(Word *word1,Word *word2){
@@ -100,10 +115,13 @@ char letraCompare(char letra1,char letra2){
 }
 void imprimeWord(Word *word){
     Apontador auxiliar = word->inicio;
+    printf("Palavra: ");
     while (auxiliar != NULL){
         printf("%c",auxiliar->letra);
         auxiliar = auxiliar->prox;
     }
-    printf("\n<%d,%d>",word->index.qtde,word->index.idDoc);
+    printf(" ");
+//    printf("<%d,%d>",word->palavraIndex.qtde,word->palavraIndex.idDoc);
+    imprimeIndexs(&word->index);
     printf("\n");
 }

@@ -8,10 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-typedef struct{
-    int qtde;
-    int idDoc;
-}indexPalavra;
+#include "IndexInverted.h"
+
 
 typedef struct Celula * Apontador;
 
@@ -23,7 +21,8 @@ typedef struct Celula{
 typedef struct{
     Apontador inicio,fim;
     int tamanho;
-    indexPalavra index;
+    indexPalavra palavraIndex;
+    invertedIndex index;
 }Word;
 
 void iniciaWord(Word *word);
@@ -31,6 +30,7 @@ void insereWord(Word *word,char *palavra);
 int wordCompare(Word *word1,Word *word2);
 char minLetter(char letra);
 unsigned char letraReturn(unsigned char position,Word *word);
+char letraPosition(int position,Word *word);
 char letraCompare(char letra1,char letra2);
 void insereLetra(Word *word,char letra);
 void imprimeWord(Word *word);

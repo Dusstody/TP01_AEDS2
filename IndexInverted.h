@@ -5,14 +5,22 @@
 #ifndef TRABALHO_1_INDEXINVERTED_H
 #define TRABALHO_1_INDEXINVERTED_H
 
-#include "WordTad.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+
+typedef struct{
+    int qtde;
+    int idDoc;
+}indexPalavra;
 
 typedef struct CelulaIndex *PonteiroIndex;
 
 typedef struct CelulaIndex{
     struct CelulaIndex *prox;
-    Word palavra;
+    struct CelulaIndex *anterior;
+    indexPalavra inverted;
 }indeces;
 
 typedef struct{
@@ -21,7 +29,7 @@ typedef struct{
 }invertedIndex;
 
 void startIndex(invertedIndex *inverted);
-void putIndex(invertedIndex *inverted,Word *palavra);
+void putIndex(invertedIndex *inverted,indexPalavra *index);
 void sortIndex(invertedIndex *inverted);
 void imprimeIndexs(invertedIndex *inverted);
 

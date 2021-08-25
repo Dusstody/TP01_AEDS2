@@ -3,9 +3,9 @@
 
 CMakeFiles/Trabalho_1.dir/IndexInverted.c.o: \
  ../IndexInverted.c \
- ../IndexInverted.h \
- ../WordTad.h
+ ../IndexInverted.h
 CMakeFiles/Trabalho_1.dir/WordTad.c.o: \
+ ../IndexInverted.h \
  ../WordTad.c \
  ../WordTad.h
 CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o: \
