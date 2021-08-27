@@ -45,6 +45,7 @@ void putIndex(invertedIndex *inverted,indexPalavra *index){
 void sortIndex(invertedIndex *inverted){
 
 }
+
 void imprimeIndexs(invertedIndex *inverted){
     PonteiroIndex auxiliar = inverted->inicio;
     while (auxiliar!=NULL){

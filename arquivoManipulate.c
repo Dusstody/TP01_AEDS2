@@ -32,15 +32,16 @@ void executaLeitura(textos *nomes){
         arquivo++;
     }
     imprimeArvore(arvore);
+    desaloca(nomes);
 }
 void desaloca(textos *nomes){
-
+    free(nomes);
 }
 
 
 
 
-int pontoTxt(char *palavra){//ainda não funciona
+int pontoTxt(char *palavra){
     int tamanho = strlen(palavra);
     char verify[4];
     int position = 0;
@@ -90,12 +91,13 @@ void identifyTextos(){
     closedir(dir);
     executaLeitura(&txts);
 }
-void leiturateste(){//falta arrumar os indices invertidos ainda... ta dando problema para quando tem mais de 1 arquivo
-    FILE *file,*file1;
+void leiturateste(){
+    FILE *file,*file1,*file2;
     file = fopen("texto1.txt","r");
     file1 = fopen("texto2.txt","r");
+    file2 = fopen("texto3.txt","r");
     int arquivo = 1;
-    if(file == NULL || file1 == NULL){
+    if(file == NULL || file1 == NULL || file2 == NULL){
         exit(1);
     }
     else{
@@ -122,7 +124,19 @@ void leiturateste(){//falta arrumar os indices invertidos ainda... ta dando prob
             wordOnPatricia(&arvore,palavraIn);
             free(palavra);
         }
+//        arquivo++;
+//        while (!feof(file2)){
+//            Word palavraIn;
+//            iniciaWord(&palavraIn);
+//            char *palavra = (char*) malloc(50*sizeof(char));
+//            fscanf(file2,"%s",palavra);
+//            insereWord(&palavraIn,palavra);
+//            palavraIn.palavraIndex.idDoc = arquivo;
+//            wordOnPatricia(&arvore,palavraIn);
+//            free(palavra);
+//        }
         imprimeArvore(arvore);
+//        pesquisa("casa",arvore);
     }
 }
 void leitura(char *Nome_arquivo,int arquivo,TypeTree *arvore){

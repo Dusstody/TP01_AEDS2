@@ -29,7 +29,6 @@ void iniciaWord(Word *word);
 void insereWord(Word *word,char *palavra);
 int wordCompare(Word *word1,Word *word2);
 char minLetter(char letra);
-unsigned char letraReturn(unsigned char position,Word *word);
 char letraPosition(int position,Word *word);
 char letraCompare(char letra1,char letra2);
 void insereLetra(Word *word,char letra);

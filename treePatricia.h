@@ -6,12 +6,16 @@
 #define TRABALHO_1_TREEPATRICIA_H
 
 #include "WordTad.h"
+#define TRUE 1
+#define FALSE 0
 
 
 typedef Word TipoChave;
-typedef unsigned char TipoIndexAmp;
-typedef char Letra;
-typedef unsigned char TipoAuxiliar;
+
+typedef struct {
+    unsigned char position;
+    char letra;
+}TipoIndexAmp;
 
 typedef enum{
     interno,externo
@@ -24,7 +28,6 @@ typedef struct typePartition{
     union{
        struct{
            TipoIndexAmp index;
-           Letra letter;
            TypeTree esquerda,direita;
        }NoInterno;
        TipoChave chave;
@@ -34,7 +37,6 @@ typedef struct typePartition{
 }treePatricia;
 
 void iniciaPatricia(TypeTree *noRaiz);
-TipoAuxiliar Bit(TipoIndexAmp position,TipoChave chave);
 TypeTree CriaNoInt(char letter,int position,TypeTree *Esquerda,TypeTree *Direita);
 TypeTree CriaNoExt(TipoChave chave);
 int EExterno(TypeTree no);
@@ -44,6 +46,10 @@ TypeTree InsereEntre(TipoChave chave,TypeTree *no,int position);
 TypeTree Insere(TipoChave chave,TypeTree *no);
 void wordOnPatricia(treePatricia **no,TipoChave chave);
 void imprimeArvore(treePatricia *no);
+
+
+char Caractere(short i,TipoChave chave);
+int MaiorIgual(char a, char b);
 
 
 #endif //TRABALHO_1_TREEPATRICIA_H

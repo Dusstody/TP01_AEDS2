@@ -28,3 +28,27 @@ string.h
 IndexInverted.h
 /home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.h
 
+/home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.c
+arquivoManipulate.h
+/home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.h
+
+/home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.h
+treePatricia.h
+/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.h
+dirent.h
+-
+
+/home/pedro/CLionProjects/TP03_AEDS2/main.c
+treePatricia.h
+/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.h
+arquivoManipulate.h
+/home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.h
+
+/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.c
+treePatricia.h
+/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.h
+
+/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.h
+WordTad.h
+/home/pedro/CLionProjects/TP03_AEDS2/WordTad.h
+

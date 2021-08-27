@@ -55,21 +55,7 @@ char letraPosition(int position,Word *word){
             auxiliar = auxiliar->prox;
         }
     }
-    return word->inicio->letra;
-}
-unsigned char letraReturn(unsigned char position,Word *word){
-    int valor = 0;
-    Apontador auxiliar = word->inicio;
-    if(position <= word->tamanho){
-        while (auxiliar != NULL){
-            if(valor == position){
-                return auxiliar->letra;
-            }
-            valor = valor + 1;
-            auxiliar = auxiliar->prox;
-        }
-    }
-    return word->inicio->letra;
+    return '\0';
 }
 
 int wordCompare(Word *word1,Word *word2){
