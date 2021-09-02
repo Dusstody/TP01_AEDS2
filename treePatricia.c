@@ -17,20 +17,20 @@ TypeTree InsereEntre(TipoChave chave,TypeTree *no,int position){
     if (EExterno(*no) || position < (*no)->No.NoInterno.index.position){//Cria um novo no externo
 
         if(EExterno(*no)){
-            caractere = Caractere((short)position,(*no)->No.chave);
+            caractere = Caractere(position,(*no)->No.chave);
         }
         else{
             caractere = (*no)->No.NoInterno.index.letra;
         }
 
         aux = CriaNoExt(chave);
-        char letter = Caractere((short)position,chave);
-        if (MaiorIgual(Caractere((short) position, chave), caractere))
+        char letter = Caractere(position,chave);
+        if (Relacao(Caractere(position, chave), caractere))
             return (CriaNoInt(letter,position,no,&aux));
         else return (CriaNoInt(caractere,position,&aux,no));
     }
-    else{
-        if (MaiorIgual(Caractere((*no)->No.NoInterno.index.position, chave), (*no)->No.NoInterno.index.letra)){
+    else{//Inserimos quando o caractere for maior ou igual a direita e menor a esquerda
+        if (Relacao(Caractere((*no)->No.NoInterno.index.position, chave), (*no)->No.NoInterno.index.letra)){
             (*no)->No.NoInterno.direita = InsereEntre(chave,&(*no)->No.NoInterno.direita,position);
         }
         else{
@@ -44,6 +44,7 @@ TypeTree InsereEntre(TipoChave chave,TypeTree *no,int position){
 TypeTree Insere(TipoChave chave,TypeTree *no){
     TypeTree aux;
     int i;
+    int j;
     if(*no == NULL){
         putIndex(&chave.index,&chave.palavraIndex);
         return (CriaNoExt(chave));
@@ -51,30 +52,29 @@ TypeTree Insere(TipoChave chave,TypeTree *no){
     else{
         aux = *no;
         while (!EExterno(aux)){
-            if(MaiorIgual(Caractere(aux->No.NoInterno.index.position, chave), aux->No.NoInterno.index.letra))
+            if(Relacao(Caractere(aux->No.NoInterno.index.position, chave), aux->No.NoInterno.index.letra))
                 aux = aux->No.NoInterno.direita;
             else aux = aux->No.NoInterno.esquerda;
             //acha o primeiro bit diferente
         }
-        i = 0;
+        i = 1;//Para quando o tamanho da chave dentro do nó é relevante começamos com o valor  1
+        j = 0;//Para quando o tamanho da chave a ser inserida é relevante começamos com o valor 0
+        if(chave.tamanho >= aux->No.chave.tamanho){
+            while ((j<=chave.tamanho) && (Caractere(j,chave) == Caractere(j,aux->No.chave)))
+                j++;
 
-        if(chave.tamanho > aux->No.chave.tamanho){
-
-            while ((i<=chave.tamanho) && (Caractere((short)i,chave) == Caractere((short)i,aux->No.chave)))
-                i++;
-
-            if(i >= chave.tamanho){
+            if(j >= chave.tamanho){
                 putIndex(&aux->No.chave.index, &chave.palavraIndex);
                 return *no;
             }
             else{
                 putIndex(&chave.index,&chave.palavraIndex);
-                return (InsereEntre(chave,no, i));
+                return (InsereEntre(chave,no, j));
             }
         }
 
         else{
-            while ((i <= aux->No.chave.tamanho) && (Caractere((short)i,chave) == Caractere((short)i,aux->No.chave)))
+            while ((i <= aux->No.chave.tamanho) && (Caractere(i,chave) == Caractere(i,aux->No.chave)))
                 i++;
 
             if(i >= aux->No.chave.tamanho){
@@ -89,11 +89,11 @@ TypeTree Insere(TipoChave chave,TypeTree *no){
     }
 }
 
-char Caractere(short i,TipoChave chave){
+char Caractere(int i,TipoChave chave){
     return (letraPosition(i,&chave));
 }
-int MaiorIgual(char a, char b){
-    return a >= b ? TRUE:FALSE;
+int Relacao(char a, char b){
+    return a >= b;
 }
 
 int EExterno(TypeTree no){
@@ -118,22 +118,94 @@ TypeTree CriaNoExt(TipoChave chave){
     return aux;
 }
 
-void pesquisa(char *palavra,TypeTree no){
-    TipoChave chave;
-    iniciaWord(&chave);
-    insereWord(&chave,palavra);
-    return search(chave,no);
+void busca(char *termoBusca, TypeTree no,int qtdDocumento,char nomeBase[20]){
+    TipoChave chaves[strlen(termoBusca)/2];
+    int position = 0;
+    for(int i = 0;i< strlen(termoBusca);i++){
+        Word termo;
+        iniciaWord(&termo);
+        while (termoBusca[i] != ' ' && i< strlen(termoBusca)){
+            insereLetra(&termo,termoBusca[i]);
+            i++;
+        }
+        chaves[position] = termo;
+        position++;
+    }
+    relevance *relevance1 = ponderation(no,qtdDocumento,chaves,position,nomeBase);
+    insercaoOrdena(relevance1,qtdDocumento);
+    for(int j = 0;j<qtdDocumento;j++){
+        printf("%s\n",relevance1[j].nomeDoc);
+    }
+    //agora falta ordenar os documentos pela relevancia
 }
-void search(TipoChave chave,TypeTree no){
-    Word palavraVazia;
-    iniciaWord(&palavraVazia);
+
+void insercaoOrdena(relevance *relevancias,int tamanho){
+    int j ;
+    for (int i = 1; i < tamanho; i++)
+    {
+        relevance aux = relevancias[i];
+        j = i - 1;
+        while ( ( j >= 0 ) && ( aux.relevancia > relevancias[j].relevancia ) )
+        {
+            relevancias[j + 1] = relevancias[j];
+            j--;
+        }
+        relevancias[j + 1] = aux;
+    }
+}
+
+double peso(int numeroOcorrencias,int qtdDocContem,int qtdDocumento){
+    double resultado = numeroOcorrencias *(log(qtdDocumento)/qtdDocContem);//depois conferir sobre o valor do log
+    return resultado;
+}
+
+relevance *ponderation(TypeTree no,int qtdDocumento,TipoChave *termos,int qtdTermosBusca,char nomeBase[20]){
+    relevance *relevancias = (relevance*)malloc(qtdDocumento * sizeof (relevance));
+    for(int i = 0;i<qtdDocumento;i++){
+        relevancias[i].relevancia = relevancia(no,termos,qtdTermosBusca,i+1,qtdDocumento);
+        strcpy(relevancias[i].nomeDoc,nomeBase);
+        char aux[1];
+        aux [0] = i + 1 + '0';
+        strcat(relevancias[i].nomeDoc,aux);
+        strcat(relevancias[i].nomeDoc,".txt");
+    }
+    return relevancias;
+}
+
+void qtdTermos(TypeTree no,int idDoc, int *quantidadeInitEnd){
+    if(EExterno(no)){
+        if(idDocBe(&no->No.chave.index,idDoc)){
+            quantidadeInitEnd[0]++;
+        }
+    }
+    else{
+        qtdTermos(no->No.NoInterno.esquerda, idDoc, quantidadeInitEnd);
+        qtdTermos(no->No.NoInterno.direita, idDoc, quantidadeInitEnd);
+    }
+}
+
+double relevancia(TypeTree no,TipoChave *termos,int qtdTermosBusca,int idDoc,int qtdDocumentos){
+    double pesos = 0;
+    int termosDistintos = 0;
+    qtdTermos(no,idDoc,&termosDistintos);
+    for (int j = 0;j<qtdTermosBusca;j++){
+        TipoChave *buscaTermo = search(termos[j],no);
+        int numeroOcorre = numeroOcorrencias(&buscaTermo->index,idDoc);
+        int numeroDocContem = buscaTermo->index.tamanho;
+        pesos += peso(numeroOcorre,numeroDocContem,qtdDocumentos);
+    }
+    return (1/((double )termosDistintos))*pesos;
+}
+
+TipoChave* search(TipoChave chave,TypeTree no){
+    TipoChave chaveVazia;
+    iniciaWord(&chaveVazia);
     if (EExterno(no)){
         if (wordCompare(&chave,&no->No.chave) == 0){
-            imprimeWord(&no->No.chave);
+            return &no->No.chave;
         }
-        return;
     }
-    if (MaiorIgual(Caractere(no->No.NoInterno.index.position, chave), no->No.NoInterno.index.letra))
+    if (Relacao(Caractere(no->No.NoInterno.index.position, chave), no->No.NoInterno.index.letra))
         search(chave,no->No.NoInterno.direita);
     else search(chave,no->No.NoInterno.esquerda);
 }

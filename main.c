@@ -1,8 +1,9 @@
 #include "treePatricia.h"
 #include "arquivoManipulate.h"
+
 int main(){
-//    identifyTextos();
-    leiturateste();
+    identifyTextos();
+//    leiturateste();
     return 0;
 }
 

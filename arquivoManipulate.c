@@ -3,41 +3,6 @@
 //
 
 #include "arquivoManipulate.h"
-void iniciaListaTextos(textos *nomes){
-    nomes->inicio = NULL;
-    nomes->fim = NULL;
-    nomes->tamanho = 0;
-}
-void insereNome(textos *nomes,char *nome){
-    if(nomes->fim == NULL){
-        nomes->fim = (ApontaNomes) malloc(sizeof(celTextos));
-        nomes->inicio = nomes->fim;
-    }
-    else{
-        nomes->fim->prox = (ApontaNomes) malloc(sizeof(celTextos));
-        nomes->fim = nomes->fim->prox;
-    }
-    strcpy(nomes->fim->nome,nome);
-    nomes->fim->prox = NULL;
-    nomes->tamanho++;
-}
-void executaLeitura(textos *nomes){
-    TypeTree arvore;
-    iniciaPatricia(&arvore);
-    ApontaNomes auxiliar = nomes->inicio;
-    int arquivo = 1;
-    while (auxiliar != NULL){
-        leitura(auxiliar->nome,arquivo,&arvore);
-        auxiliar = auxiliar->prox;
-        arquivo++;
-    }
-    imprimeArvore(arvore);
-    desaloca(nomes);
-}
-void desaloca(textos *nomes){
-    free(nomes);
-}
-
 
 
 
@@ -68,15 +33,37 @@ int pontoTxt(char *palavra){
     }
     return 0;
 }
+
+int idDoc(char *arquivo){
+    for(int i = 0;i< strlen(arquivo);i++){
+        if(arquivo[i] == '.'){
+            return arquivo[i-1] - '0';
+        }
+    }
+}
+
+char* nomeBase(char *palavra){
+    char *palavraBase = (char*) malloc((strlen(palavra) - 3) *sizeof(char));
+    for(int i = 0;i< strlen(palavra);i++){
+        if(palavra[i+1] == '.'){
+            break;
+        }
+        palavraBase[i] = palavra[i];
+    }
+    return palavraBase;
+}
+
 void identifyTextos(){
     DIR *dir;
     char diretorio[50];
     struct dirent *lsdir;
-    printf("Digite o diretorio dos arquivos (.txt) para leitura (recomenda-se usar uma pasta vazia):");
+    printf("Digite o diretorio dos arquivos (.txt) para leitura (usar uma pasta com apenas os arquivos de texto):");
     scanf("%s",diretorio);
     dir = opendir(diretorio);
-    textos txts;
-    iniciaListaTextos(&txts);
+    TypeTree arvore;
+    iniciaPatricia(&arvore);
+    arquivos arquivosNomes;
+    arquivosNomes.quantidade = 0;
     if(dir == NULL){
         printf("diretorio inexistente");
     }
@@ -84,46 +71,59 @@ void identifyTextos(){
     else {
         while ((lsdir = readdir(dir)) != NULL) {
             if(pontoTxt(lsdir->d_name) == 1) {
-                insereNome(&txts,lsdir->d_name);
+                if(arquivosNomes.quantidade == 0) {
+                    char *nome = nomeBase(lsdir->d_name);
+                    strcpy(arquivosNomes.nomesArq, nome);
+                }
+                char *name_arq = (char*) malloc(60*sizeof (char));
+                strcpy(name_arq,diretorio);
+                strcat(name_arq,"/");
+                strcat(name_arq,lsdir->d_name);
+                arquivosNomes.quantidade++;
+                int arquivo = idDoc(lsdir->d_name);
+                leitura(name_arq,arquivo,&arvore);
+                free(name_arq);
             }
         }
     }
     closedir(dir);
-    executaLeitura(&txts);
+//    imprimeArvore(arvore);
+    busca("quer todos",arvore,arquivosNomes.quantidade,arquivosNomes.nomesArq);
 }
-void leiturateste(){
-    FILE *file,*file1,*file2;
-    file = fopen("texto1.txt","r");
-    file1 = fopen("texto2.txt","r");
-    file2 = fopen("texto3.txt","r");
-    int arquivo = 1;
-    if(file == NULL || file1 == NULL || file2 == NULL){
-        exit(1);
-    }
-    else{
-        TypeTree arvore;
-        iniciaPatricia(&arvore);
-        while (!feof(file)){
-            Word palavraIn;
-            iniciaWord(&palavraIn);
-            char *palavra = (char*) malloc(50*sizeof(char));
-            fscanf(file,"%s",palavra);
-            insereWord(&palavraIn,palavra);
-            palavraIn.palavraIndex.idDoc = arquivo;
-            wordOnPatricia(&arvore,palavraIn);
-            free(palavra);
-        }
-        arquivo++;
-        while (!feof(file1)){
-            Word palavraIn;
-            iniciaWord(&palavraIn);
-            char *palavra = (char*) malloc(50*sizeof(char));
-            fscanf(file1,"%s",palavra);
-            insereWord(&palavraIn,palavra);
-            palavraIn.palavraIndex.idDoc = arquivo;
-            wordOnPatricia(&arvore,palavraIn);
-            free(palavra);
-        }
+
+//void leiturateste(){
+//    FILE *file,*file1,*file2;
+//    file = fopen("texto1.txt","r");
+//    file1 = fopen("texto2.txt","r");
+//    file2 = fopen("texto3.txt","r");
+//    int arquivo = 1;
+//    if(file == NULL || file1 == NULL || file2 == NULL){
+//        exit(1);
+//    }
+//    else{
+//        TypeTree arvore;
+//        iniciaPatricia(&arvore);
+//        while (!feof(file)){
+//            Word palavraIn;
+//            iniciaWord(&palavraIn);
+//            char *palavra = (char*) malloc(30*sizeof(char));
+//            fscanf(file,"%s",palavra);
+//            insereWord(&palavraIn,palavra);
+//            palavraIn.palavraIndex.idDoc = arquivo;
+//            wordOnPatricia(&arvore,palavraIn);
+//            free(palavra);
+//        }
+//        arquivo++;
+//        while (!feof(file1)){
+//            Word palavraIn;
+//            iniciaWord(&palavraIn);
+//            char *palavra = (char*) malloc(30*sizeof(char));
+//            fscanf(file1,"%s",palavra);
+//            insereWord(&palavraIn,palavra);
+//            palavraIn.palavraIndex.idDoc = arquivo;
+//            wordOnPatricia(&arvore,palavraIn);
+//            free(palavra);
+//        }
 //        arquivo++;
 //        while (!feof(file2)){
 //            Word palavraIn;
@@ -135,10 +135,10 @@ void leiturateste(){
 //            wordOnPatricia(&arvore,palavraIn);
 //            free(palavra);
 //        }
-        imprimeArvore(arvore);
-//        pesquisa("casa",arvore);
-    }
-}
+//        imprimeArvore(arvore);
+//        busca("casa",arvore);
+//    }
+//}
 void leitura(char *Nome_arquivo,int arquivo,TypeTree *arvore){
     FILE *file;
     file = fopen(Nome_arquivo,"r");
@@ -149,7 +149,7 @@ void leitura(char *Nome_arquivo,int arquivo,TypeTree *arvore){
         while (!feof(file)){
             Word palavraIn;
             iniciaWord(&palavraIn);
-            char *palavra = (char*) malloc(50*sizeof(char));
+            char *palavra = (char*) malloc(30*sizeof(char));
             fscanf(file,"%s",palavra);
             insereWord(&palavraIn,palavra);
             palavraIn.palavraIndex.idDoc = arquivo;

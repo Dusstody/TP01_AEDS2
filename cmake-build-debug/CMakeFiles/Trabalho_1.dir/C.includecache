@@ -14,10 +14,6 @@ stdlib.h
 string.h
 -
 
-/home/pedro/CLionProjects/TP03_AEDS2/WordTad.c
-WordTad.h
-/home/pedro/CLionProjects/TP03_AEDS2/WordTad.h
-
 /home/pedro/CLionProjects/TP03_AEDS2/WordTad.h
 stdio.h
 -
@@ -38,17 +34,9 @@ treePatricia.h
 dirent.h
 -
 
-/home/pedro/CLionProjects/TP03_AEDS2/main.c
-treePatricia.h
-/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.h
-arquivoManipulate.h
-/home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.h
-
-/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.c
-treePatricia.h
-/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.h
-
 /home/pedro/CLionProjects/TP03_AEDS2/treePatricia.h
 WordTad.h
 /home/pedro/CLionProjects/TP03_AEDS2/WordTad.h
+math.h
+-
 

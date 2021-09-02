@@ -46,6 +46,27 @@ void sortIndex(invertedIndex *inverted){
 
 }
 
+int numeroOcorrencias(invertedIndex *inverted,int idDoc){
+    PonteiroIndex auxiliar = inverted->inicio;
+    while (auxiliar != NULL){
+        if(idDoc == auxiliar->inverted.idDoc){
+            return auxiliar->inverted.qtde;
+        }
+        auxiliar = auxiliar->prox;
+    }
+    return 0;
+}
+
+int idDocBe(invertedIndex *inverted,int idDoc){
+    PonteiroIndex auxiliar = inverted->inicio;
+    while (auxiliar != NULL){
+        if(idDoc == auxiliar->inverted.idDoc){
+            return 1;
+        }
+        auxiliar = auxiliar->prox;
+    }
+    return 0;
+}
 void imprimeIndexs(invertedIndex *inverted){
     PonteiroIndex auxiliar = inverted->inicio;
     while (auxiliar!=NULL){
