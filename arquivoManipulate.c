@@ -87,8 +87,8 @@ void identifyTextos(){
         }
     }
     closedir(dir);
-//    imprimeArvore(arvore);
-    busca("quer todos",arvore,arquivosNomes.quantidade,arquivosNomes.nomesArq);
+    imprimeArvore(arvore);
+//    busca("quer todos",arvore,arquivosNomes.quantidade,arquivosNomes.nomesArq);
 }
 
 //void leiturateste(){

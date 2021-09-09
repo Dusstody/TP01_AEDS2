@@ -30,7 +30,7 @@ typedef struct{
 
 void startIndex(invertedIndex *inverted);
 void putIndex(invertedIndex *inverted,indexPalavra *index);
-void sortIndex(invertedIndex *inverted);
+indexPalavra *sortIndex(invertedIndex *inverted);
 void imprimeIndexs(invertedIndex *inverted);
 int idDocBe(invertedIndex *inverted,int idDoc);
 int numeroOcorrencias(invertedIndex *inverted,int idDoc);

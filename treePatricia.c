@@ -136,7 +136,6 @@ void busca(char *termoBusca, TypeTree no,int qtdDocumento,char nomeBase[20]){
     for(int j = 0;j<qtdDocumento;j++){
         printf("%s\n",relevance1[j].nomeDoc);
     }
-    //agora falta ordenar os documentos pela relevancia
 }
 
 void insercaoOrdena(relevance *relevancias,int tamanho){

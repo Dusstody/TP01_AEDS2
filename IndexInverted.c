@@ -42,8 +42,29 @@ void putIndex(invertedIndex *inverted,indexPalavra *index){
         inverted->fim->inverted.qtde++;
     }
 }
-void sortIndex(invertedIndex *inverted){
 
+indexPalavra *sortIndex(invertedIndex *inverted){
+    indexPalavra *indexes = (indexPalavra*) malloc(inverted->tamanho * sizeof(indexPalavra));
+    PonteiroIndex aux1 = inverted->inicio;
+    int position = 0;
+    while (aux1!=NULL){
+        indexes[position] = aux1->inverted;
+        aux1 = aux1->prox;
+        position++;
+    }
+    int j ;
+    for (int i = 1; i < inverted->tamanho; i++)
+    {
+        indexPalavra aux = indexes[i];
+        j = i - 1;
+        while ( ( j >= 0 ) && ( aux.idDoc < indexes[j].idDoc ) )
+        {
+            indexes[j + 1] = indexes[j];
+            j--;
+        }
+        indexes[j + 1] = aux;
+    }
+    return indexes;
 }
 
 int numeroOcorrencias(invertedIndex *inverted,int idDoc){
@@ -68,9 +89,8 @@ int idDocBe(invertedIndex *inverted,int idDoc){
     return 0;
 }
 void imprimeIndexs(invertedIndex *inverted){
-    PonteiroIndex auxiliar = inverted->inicio;
-    while (auxiliar!=NULL){
-        printf("<%d,%d> ",auxiliar->inverted.qtde,auxiliar->inverted.idDoc);
-        auxiliar = auxiliar->prox;
+    indexPalavra *indices = sortIndex(inverted);
+    for(int i = 0;i<inverted->tamanho;i++){
+        printf("<%d,%d> ",indices[i].qtde,indices[i].idDoc);
     }
 }
