@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/pedro/CLionProjects/TP03_AEDS2/Dicionario.c" "/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles/Trabalho_1.dir/Dicionario.c.o"
   "/home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.c" "/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles/Trabalho_1.dir/IndexInverted.c.o"
   "/home/pedro/CLionProjects/TP03_AEDS2/WordTad.c" "/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles/Trabalho_1.dir/WordTad.c.o"
   "/home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.c" "/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o"

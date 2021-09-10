@@ -76,6 +76,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/pedro/CLionProjects/TP03_AEDS2/Dicionario.c">
+			<Option target="Trabalho_1"/>
+		</Unit>
+		<Unit filename="/home/pedro/CLionProjects/TP03_AEDS2/Dicionario.h">
+			<Option target="Trabalho_1"/>
+		</Unit>
 		<Unit filename="/home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.c">
 			<Option target="Trabalho_1"/>
 		</Unit>

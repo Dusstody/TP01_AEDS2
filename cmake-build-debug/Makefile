@@ -129,6 +129,30 @@ Trabalho_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/build
 .PHONY : Trabalho_1/fast
 
+Dicionario.o: Dicionario.c.o
+.PHONY : Dicionario.o
+
+# target to build an object file
+Dicionario.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/Dicionario.c.o
+.PHONY : Dicionario.c.o
+
+Dicionario.i: Dicionario.c.i
+.PHONY : Dicionario.i
+
+# target to preprocess a source file
+Dicionario.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/Dicionario.c.i
+.PHONY : Dicionario.c.i
+
+Dicionario.s: Dicionario.c.s
+.PHONY : Dicionario.s
+
+# target to generate assembly for a file
+Dicionario.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/Dicionario.c.s
+.PHONY : Dicionario.c.s
+
 IndexInverted.o: IndexInverted.c.o
 .PHONY : IndexInverted.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Trabalho_1"
+	@echo "... Dicionario.o"
+	@echo "... Dicionario.i"
+	@echo "... Dicionario.s"
 	@echo "... IndexInverted.o"
 	@echo "... IndexInverted.i"
 	@echo "... IndexInverted.s"

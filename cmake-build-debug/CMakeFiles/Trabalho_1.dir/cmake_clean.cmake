@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Trabalho_1.dir/Dicionario.c.o"
   "CMakeFiles/Trabalho_1.dir/IndexInverted.c.o"
   "CMakeFiles/Trabalho_1.dir/WordTad.c.o"
   "CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o"
