@@ -38,13 +38,13 @@ char minLetter(char letra){
 void insereWord(Word *word,char *palavra){
     unsigned long tamanho = strlen(palavra);
     for (unsigned long i = 0;i<tamanho;i++){
-        if(palavra[i] != '.' && palavra[i] != '?')
+        if(palavra[i] != '.' && palavra[i] != '?' && palavra[i] != ',' && palavra[i] != '!' && palavra[i] != '(' && palavra[i] != ')' && palavra[i] != ';' && palavra[i] != ':')
             insereLetra(word, minLetter(palavra[i]));
     }
     word->palavraIndex.qtde = 1;
 }
 char letraPosition(int position,Word *word){
-    int valor = 0;
+    int valor = 0;//valor de i começa de 1
     Apontador auxiliar = word->inicio;
     if(position <= word->tamanho){
         while (auxiliar != NULL){
@@ -55,7 +55,7 @@ char letraPosition(int position,Word *word){
             auxiliar = auxiliar->prox;
         }
     }
-    return '\0';
+    return NULL;
 }
 
 int wordCompare(Word *word1,Word *word2){

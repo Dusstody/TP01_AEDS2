@@ -6,15 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.c
-IndexInverted.h
-/home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.h
-
 /home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.h
 stdio.h
 -
 stdlib.h
 -
 string.h
+-
+
+/home/pedro/CLionProjects/TP03_AEDS2/WordTad.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+IndexInverted.h
+/home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.h
+
+/home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.c
+arquivoManipulate.h
+/home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.h
+
+/home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.h
+treePatricia.h
+/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.h
+dirent.h
+-
+
+/home/pedro/CLionProjects/TP03_AEDS2/treePatricia.h
+WordTad.h
+/home/pedro/CLionProjects/TP03_AEDS2/WordTad.h
+math.h
 -
 

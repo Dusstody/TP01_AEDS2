@@ -35,9 +35,21 @@ int pontoTxt(char *palavra){
 }
 
 int idDoc(char *arquivo){
-    for(int i = 0;i< strlen(arquivo);i++){
-        if(arquivo[i] == '.'){
-            return arquivo[i-1] - '0';
+    for(int j = 0;j< strlen(arquivo);j++){
+        if(arquivo[j] == '.'){
+            int total = 0;
+            int i = j-1;
+            while (arquivo[i] == '0'|| arquivo[i] == '1' || arquivo[i] == '2' || arquivo[i] == '3' || arquivo[i] == '4' ||
+            arquivo[i] == '5' || arquivo[i] == '6' || arquivo[i] == '7' || arquivo[i] == '8' || arquivo[i] == '9'){
+                i--;
+            }
+            for(int s = i+1;s<j;s++){
+                total += arquivo[s] - '0';
+                if(s+1 <j){
+                    total = total*10;
+                }
+            }
+            return total;
         }
     }
 }
@@ -64,6 +76,7 @@ void identifyTextos(){
     iniciaPatricia(&arvore);
     arquivos arquivosNomes;
     arquivosNomes.quantidade = 0;
+    arquivosNomes.idDocs = (int*) malloc(100*sizeof(int));
     if(dir == NULL){
         printf("diretorio inexistente");
     }
@@ -79,66 +92,20 @@ void identifyTextos(){
                 strcpy(name_arq,diretorio);
                 strcat(name_arq,"/");
                 strcat(name_arq,lsdir->d_name);
-                arquivosNomes.quantidade++;
                 int arquivo = idDoc(lsdir->d_name);
+                arquivosNomes.idDocs[arquivosNomes.quantidade] = arquivo;
                 leitura(name_arq,arquivo,&arvore);
+                arquivosNomes.quantidade++;
                 free(name_arq);
             }
         }
     }
     closedir(dir);
     imprimeArvore(arvore);
-//    busca("quer todos",arvore,arquivosNomes.quantidade,arquivosNomes.nomesArq);
+    busca("quer todos",arvore,arquivosNomes.quantidade,arquivosNomes.nomesArq,arquivosNomes.idDocs);
 }
 
-//void leiturateste(){
-//    FILE *file,*file1,*file2;
-//    file = fopen("texto1.txt","r");
-//    file1 = fopen("texto2.txt","r");
-//    file2 = fopen("texto3.txt","r");
-//    int arquivo = 1;
-//    if(file == NULL || file1 == NULL || file2 == NULL){
-//        exit(1);
-//    }
-//    else{
-//        TypeTree arvore;
-//        iniciaPatricia(&arvore);
-//        while (!feof(file)){
-//            Word palavraIn;
-//            iniciaWord(&palavraIn);
-//            char *palavra = (char*) malloc(30*sizeof(char));
-//            fscanf(file,"%s",palavra);
-//            insereWord(&palavraIn,palavra);
-//            palavraIn.palavraIndex.idDoc = arquivo;
-//            wordOnPatricia(&arvore,palavraIn);
-//            free(palavra);
-//        }
-//        arquivo++;
-//        while (!feof(file1)){
-//            Word palavraIn;
-//            iniciaWord(&palavraIn);
-//            char *palavra = (char*) malloc(30*sizeof(char));
-//            fscanf(file1,"%s",palavra);
-//            insereWord(&palavraIn,palavra);
-//            palavraIn.palavraIndex.idDoc = arquivo;
-//            wordOnPatricia(&arvore,palavraIn);
-//            free(palavra);
-//        }
-//        arquivo++;
-//        while (!feof(file2)){
-//            Word palavraIn;
-//            iniciaWord(&palavraIn);
-//            char *palavra = (char*) malloc(50*sizeof(char));
-//            fscanf(file2,"%s",palavra);
-//            insereWord(&palavraIn,palavra);
-//            palavraIn.palavraIndex.idDoc = arquivo;
-//            wordOnPatricia(&arvore,palavraIn);
-//            free(palavra);
-//        }
-//        imprimeArvore(arvore);
-//        busca("casa",arvore);
-//    }
-//}
+
 void leitura(char *Nome_arquivo,int arquivo,TypeTree *arvore){
     FILE *file;
     file = fopen(Nome_arquivo,"r");
@@ -149,12 +116,11 @@ void leitura(char *Nome_arquivo,int arquivo,TypeTree *arvore){
         while (!feof(file)){
             Word palavraIn;
             iniciaWord(&palavraIn);
-            char *palavra = (char*) malloc(30*sizeof(char));
+            char palavra[30];
             fscanf(file,"%s",palavra);
             insereWord(&palavraIn,palavra);
             palavraIn.palavraIndex.idDoc = arquivo;
             wordOnPatricia(arvore,palavraIn);
-            free(palavra);
         }
     }
 }

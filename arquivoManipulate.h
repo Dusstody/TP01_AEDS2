@@ -10,6 +10,7 @@
 typedef struct{
     int quantidade;
     char nomesArq[30];
+    int *idDocs;
 }arquivos;
 
 char* nomeBase(char *palavra);

@@ -16,6 +16,7 @@ typedef Word TipoChave;
 typedef struct{
     char nomeDoc[30];
     double relevancia;
+    int idDoc;
 }relevance;
 
 typedef struct {
@@ -46,13 +47,13 @@ void iniciaPatricia(TypeTree *noRaiz);
 TypeTree CriaNoInt(char letter,int position,TypeTree *Esquerda,TypeTree *Direita);
 TypeTree CriaNoExt(TipoChave chave);
 int EExterno(TypeTree no);
-void busca(char *termoBusca, TypeTree no,int qtdDocumento,char nomeBase[20]);
+void busca(char *termoBusca, TypeTree no,int qtdDocumento,char nomeBase[20],int *idDocs);
 double relevancia(TypeTree no,TipoChave *termos,int qtdTermosBusca,int idDoc,int qtdDcumentos);
-relevance *ponderation( TypeTree no,int qtdDocumento,TipoChave *termos,int qtdTermosBusca,char nomeBase[20]);
+relevance *ponderation( TypeTree no,int qtdDocumento,TipoChave *termos,int qtdTermosBusca,char nomeBase[20],int *idDocs);
 double peso(int numeroOcorrencias,int qtdDocContem,int qtdDocumento);
 void qtdTermos(TypeTree no,int idDoc,int *quantidadeInitEnd);
 TipoChave* search(TipoChave chave,TypeTree no);
-TypeTree InsereEntre(TipoChave chave,TypeTree *no,int position);
+TypeTree InsereEntre(TipoChave chave,TypeTree *no,int position,char letraNointerno);
 TypeTree Insere(TipoChave chave,TypeTree *no);
 void wordOnPatricia(treePatricia **no,TipoChave chave);
 void imprimeArvore(treePatricia *no);
