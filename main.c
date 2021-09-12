@@ -23,7 +23,12 @@ int main(){
             free(palavra);
         }
 //        printTST(rootTST);
-        AutoFillTST(rootTST,"victory");
+        int *indice = (int*) malloc(sizeof (int));
+        *indice = 0;
+        char **Fill = AutoFillTST(rootTST,"com",indice);
+        for (int i = 0;i< *indice;i++){
+            printf("%s\n",Fill[i]);
+        }
     }
 
     return 0;
