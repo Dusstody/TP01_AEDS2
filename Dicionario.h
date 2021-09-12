@@ -14,6 +14,7 @@
 #define FALSE 0
 
 #define MAX_SIZE 50
+#define MAXTAM 100000
 typedef char TSTValue;
 typedef struct TSTNode *TSTNodePointer;
 
@@ -60,7 +61,7 @@ int searchTST(TSTNodePointer tree, char *word, int *comparisons, int *height);
  @param buffer Uma string de buffer para armazenar a palavra, ja que cada nó salva um caracter apenas
  @param index Indice da profundidade do buffer para percorrer a árvore
  */
-void printTSTSubtree(TSTNodePointer tree, char *buffer, int index,char *termos);
+void printTSTSubtree(TSTNodePointer tree, char *buffer, int index,char *termos,char **Fill,int *position);
 
 
 /**
@@ -102,7 +103,7 @@ int nodeAmountTST(TSTNodePointer tree);
  */
 void statsTST(TSTNodePointer tree);
 
-int AutoFillTST(TSTNodePointer tree, char *termoPreenche);
-void imprimeTermos(TSTNodePointer tree,char *termos,char *buffer,int index);
-void verify(char *termo,char *stringC);
+char** AutoFillTST(TSTNodePointer tree, char *termoPreenche,int *indice);
+void imprimeTermos(TSTNodePointer tree,char *termos,char *buffer,int index,char **Fill,int *position);
+void verify(char *termo,char *stringC,char **Fill,int index,int *position);
 #endif //DICIONARIOTST_DICIONARIO_H

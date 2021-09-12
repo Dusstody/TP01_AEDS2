@@ -54,16 +54,16 @@ int searchTST(TSTNodePointer tree, char *word, int *comparisons, int *height) {
 }
 
 // Percorre uma sub-arvore TST, chamando-a recursivamente
-void printTSTSubtree(TSTNodePointer tree, char *buffer, int index,char *termos) {
+void printTSTSubtree(TSTNodePointer tree, char *buffer, int index,char *termos,char **Fill,int *position) {
   if (tree) {
-    printTSTSubtree(tree->left, buffer, index,termos);
+    printTSTSubtree(tree->left, buffer, index,termos,Fill,position);
     buffer[index] = tree->character;
     if (tree->isEndOfString) {
       buffer[index + 1] = '\0';
-      verify(termos,buffer);
+      verify(termos,buffer,Fill,index,position);
     }
-    printTSTSubtree(tree->middle, buffer, index + 1,termos);
-    printTSTSubtree(tree->right, buffer, index,termos);
+    printTSTSubtree(tree->middle, buffer, index + 1,termos,Fill,position);
+    printTSTSubtree(tree->right, buffer, index,termos,Fill,position);
   }
 }
 
@@ -103,23 +103,28 @@ void statsTST(TSTNodePointer tree) {
   printf("\t ********* \n");
 }
 
-int AutoFillTST(TSTNodePointer tree, char *termoPreenche) {
+char** AutoFillTST(TSTNodePointer tree, char *termoPreenche,int *indice) {
     char *buffer = (char*) malloc(MAX_SIZE*sizeof(char));
-    imprimeTermos(tree,termoPreenche,buffer,0);
+    char **respostas = (char**) malloc(MAXTAM*sizeof(char));
+    for(int i = 0;i<MAXTAM;i++){
+        respostas[i] = (char*) malloc(MAX_SIZE*sizeof (char));
+    }
+    imprimeTermos(tree,termoPreenche,buffer,0,respostas,indice);
+    return respostas;
 }
-void imprimeTermos(TSTNodePointer tree,char *termos,char* buffer,int index){
+void imprimeTermos(TSTNodePointer tree,char *termos,char* buffer,int index,char **Fill,int *position){
     if (tree) {
-        printTSTSubtree(tree->left, buffer, index,termos);
+        printTSTSubtree(tree->left, buffer, index,termos,Fill,position);
         buffer[index] = tree->character;
         if (tree->isEndOfString) {
             buffer[index + 1] = '\0';
-            verify(termos,buffer);
+            verify(termos,buffer,Fill,index,position);
         }
-        printTSTSubtree(tree->middle, buffer, index + 1,termos);
-        printTSTSubtree(tree->right, buffer, index,termos);
+        printTSTSubtree(tree->middle, buffer, index + 1,termos,Fill,position);
+        printTSTSubtree(tree->right, buffer, index,termos,Fill,position);
     }
 }
-void verify(char *termo,char *stringC){
+void verify(char *termo,char *stringC,char **Fill,int index,int *position){
     if(strlen(termo) > strlen(stringC)){
         return;
     }
@@ -131,7 +136,9 @@ void verify(char *termo,char *stringC){
             }
         }
         if(count == strlen(termo)){
-            printf("%s\n",stringC);
+//            printf("%s\n",stringC);
+            strcpy(Fill[(*position)++],stringC);
+            return;
         }
     }
 }
