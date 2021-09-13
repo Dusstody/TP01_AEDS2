@@ -1,12 +1,11 @@
 //
-// Created by duce on 12/09/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #include "JanelaSelecaoPasta.h"
-
-void* inicializaPatricia() {
-    identifyTextos();
-}
 
 void destroyJanelaSelecaoPasta(GtkWidget *widget, gpointer data) {
     gtk_widget_destroy(widget);
@@ -15,8 +14,6 @@ void destroyJanelaSelecaoPasta(GtkWidget *widget, gpointer data) {
 void selecionouPasta(GtkWidget *widget, gpointer data) {
     diretorio_selecionado = (char *)gtk_file_chooser_get_current_folder(GTK_FILE_CHOOSER(selecionador));
     g_print("%s\n", diretorio_selecionado);
-
-    inicializaPatricia();
 
     destroyJanelaSelecaoPasta(janela_selecao_pasta, data);
 }

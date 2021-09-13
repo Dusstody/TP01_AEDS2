@@ -1,5 +1,8 @@
 //
-// Created by duce on 11/09/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #ifndef GTKTESTE_JANELABUSCA_H
@@ -23,10 +26,12 @@
 #define MAX_RESULTADOS_PREENCHIMENTO 8
 
 // 'completion' deve permanecer global para que o autopreenchimento da busca funcione de forma adequada
+GtkWidget *janela_busca;
 GtkEntryCompletion *completion;
+GtkSearchEntry *campo_pesquisa;
 pthread_t thread_preenchimento;
 
-const gchar *entrada;
+gchar *entrada;
 char **resultados;
 int *indice;
 

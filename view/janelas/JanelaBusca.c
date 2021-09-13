@@ -1,5 +1,8 @@
 //
-// Created by duce on 11/09/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #include "JanelaBusca.h"
@@ -9,13 +12,30 @@ void *threadPreenchimento() {
 }
 
 void buscaTermoNaPatricia(GtkWidget *widget, gpointer data) {
-    iniciaWord(termo_busca_patricia);
+    char *message;
+    message = (char *)(malloc(sizeof(char) * 120));
 
-    for (int i = 0; i < strlen(entrada); ++i)
-        insereLetra(termo_busca_patricia, entrada[i]);
+    if (strlen(entrada) > 0) {
+        busca(entrada, patricia, files.quantidade, files.nomesArq, files.idDocs);
+        strcpy(message, "Busca concluída! Veja os resultados no terminal.");
+    } else {
+        strcpy(message, "Ao menos um caractere deve ser digitado!");
+    }
 
-    Word *res = search(*termo_busca_patricia, patricia);
-    imprimeWord(res);
+    GtkWidget *dialog;
+    dialog = gtk_message_dialog_new(
+            GTK_WINDOW(janela_busca), GTK_DIALOG_DESTROY_WITH_PARENT,
+            GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
+            "%s", message
+    );
+
+    gtk_dialog_run (GTK_DIALOG (dialog));
+    gtk_widget_destroy (dialog);
+
+    free(message);
+    gtk_entry_set_text(GTK_ENTRY(campo_pesquisa), "");
+
+    strcpy(entrada, "");
 }
 
 GtkTreeModel* novoAutopreenchimento() {
@@ -66,17 +86,14 @@ void updatePesquisa(GtkWidget *widget, gpointer data) {
     entrada = gtk_entry_get_text(GTK_ENTRY(widget));
 
     GtkTreeModel *model;
-    model = novoAutopreenchimento(entrada);
+    model = novoAutopreenchimento();
 
     gtk_entry_completion_set_model(completion, model);
     g_object_unref (model);
 }
 
 void inicializaJanelaBusca(GtkApplication *app, gpointer user_data) {
-    GtkWidget *window;
     GtkWidget *botao_busca;
-
-    GtkSearchEntry *pesquisa;
     GtkTreeModel *completion_model;
 
     GtkBuilder *builder;
@@ -89,17 +106,17 @@ void inicializaJanelaBusca(GtkApplication *app, gpointer user_data) {
                 NULL
             );
     gtk_builder_connect_signals(builder, NULL);
-    window = gtk_application_window_new(app);
-    window = GTK_WIDGET(gtk_builder_get_object(builder, ID_JANELA_BUSCA));
+    janela_busca = gtk_application_window_new(app);
+    janela_busca = GTK_WIDGET(gtk_builder_get_object(builder, ID_JANELA_BUSCA));
 
-    pesquisa = GTK_SEARCH_ENTRY(gtk_builder_get_object(builder, ID_PESQUISA_JANELA_BUSCA));
+    campo_pesquisa = GTK_SEARCH_ENTRY(gtk_builder_get_object(builder, ID_PESQUISA_JANELA_BUSCA));
 
     completion = gtk_entry_completion_new();
 
-    gtk_entry_set_completion(GTK_ENTRY(pesquisa), completion);
+    gtk_entry_set_completion(GTK_ENTRY(campo_pesquisa), completion);
     g_object_unref(completion);
 
     gtk_entry_completion_set_text_column(completion, 0);
 
-    gtk_widget_show_all(window);
+    gtk_widget_show_all(janela_busca);
 } // hospit

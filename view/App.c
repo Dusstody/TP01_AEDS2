@@ -1,5 +1,8 @@
 //
-// Created by duce on 12/09/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #include "App.h"

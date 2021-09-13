@@ -1,5 +1,8 @@
 //
-// Created by pedro on 22/08/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #ifndef TRABALHO_1_ARQUIVOMANIPULATE_H
@@ -16,6 +19,7 @@ typedef struct{
 }arquivos;
 
 TypeTree patricia;
+arquivos files;
 char **palavras_patricia;
 char **indices_patricia;
 

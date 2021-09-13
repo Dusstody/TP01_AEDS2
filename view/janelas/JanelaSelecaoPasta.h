@@ -1,5 +1,8 @@
 //
-// Created by duce on 12/09/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #ifndef TRABALHO_1_JANELASELECAOPASTA_H
@@ -24,6 +27,5 @@ gchar *diretorio_selecionado;
 void abrirJanelaSelecaoPasta(GtkApplication *app, gpointer userdata);
 void destroyJanelaSelecaoPasta(GtkWidget *widget, gpointer data);
 void selecionouPasta(GtkWidget *widget, gpointer data);
-void* inicializaPatricia();
 
 #endif //TRABALHO_1_JANELASELECAOPASTA_H

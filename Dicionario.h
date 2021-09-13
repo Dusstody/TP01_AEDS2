@@ -1,5 +1,8 @@
 //
-// Created by gabxn on 09/09/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #ifndef DICIONARIOTST_DICIONARIO_H
@@ -113,4 +116,8 @@ void inicializaDicionario();
 char** AutoFillTST(TSTNodePointer tree, char *termoPreenche,int *indice);
 void imprimeTermos(TSTNodePointer tree,char *termos,char *buffer,int index,char **Fill,int *position);
 void verify(char *termo,char *stringC,char **Fill,int index,int *position);
+
+void mostraTSTSubTree(TSTNodePointer node, char *buffer, int index);
+void mostraTST(TSTNodePointer tree);
+
 #endif //DICIONARIOTST_DICIONARIO_H

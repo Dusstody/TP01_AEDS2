@@ -1,3 +1,10 @@
+//
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
+//
+
 #include "treePatricia.h"
 #include "arquivoManipulate.h"
 #include "Dicionario.h"
@@ -14,8 +21,6 @@ void* threadInterface () {
 int main (int argc, char *argv[]){
 //    identifyTextos();
 //    leiturateste();
-
-    inicializaDicionario();
 
     ac = argc;
     av = argv;

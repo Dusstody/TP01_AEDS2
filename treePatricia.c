@@ -1,5 +1,8 @@
 //
-// Created by pedro on 18/08/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #include "treePatricia.h"
@@ -162,8 +165,11 @@ relevance *ponderation(TypeTree no,int qtdDocumento,TipoChave *termos,int qtdTer
     for(int i = 0;i<qtdDocumento;i++){
         relevancias[i].relevancia = relevancia(no,termos,qtdTermosBusca,idDocs[i],qtdDocumento);
         strcpy(relevancias[i].nomeDoc,nomeBase);
+
+        relevancias[i].nomeDoc[strlen(relevancias[i].nomeDoc) - 1] = '\0';
+
         relevancias[i].idDoc = idDocs[i];
-        strcat(relevancias[i].nomeDoc,".txt");
+//        strcat(relevancias[i].nomeDoc,".txt");
     }
     return relevancias;
 }

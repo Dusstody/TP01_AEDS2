@@ -1,5 +1,8 @@
 //
-// Created by gabxn on 09/09/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #include "Dicionario.h"
@@ -71,9 +74,24 @@ void printTSTSubtree(TSTNodePointer tree, char *buffer, int index,char *termos,c
 }
 
 // Imprime uma arvore TST
-void printTST(TSTNodePointer tree) {
-  char buffer[MAX_SIZE];
-//  printTSTSubtree(tree, buffer, 0);
+void mostraTST(TSTNodePointer tree) {
+    char buffer[MAX_SIZE];
+    mostraTSTSubTree(tree, buffer, 0);
+}
+
+void mostraTSTSubTree(TSTNodePointer node, char *buffer, int index) {
+    if (node) {
+        mostraTSTSubTree(node->left, buffer, index);
+        buffer[index] = node->character;
+
+        if (node->isEndOfString) {
+            buffer[index + 1] = '\0';
+            printf("%s\n", buffer);
+        }
+
+        mostraTSTSubTree(node->middle, buffer, index + 1);
+        mostraTSTSubTree(node->right, buffer, index);
+    }
 }
 
 // Verifica o máximo entre dois números inteiros

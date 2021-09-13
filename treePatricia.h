@@ -1,5 +1,8 @@
 //
-// Created by pedro on 18/08/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #ifndef TRABALHO_1_TREEPATRICIA_H
@@ -14,7 +17,7 @@
 typedef Word TipoChave;
 
 typedef struct{
-    char nomeDoc[30];
+    char nomeDoc[50];
     double relevancia;
     int idDoc;
 }relevance;

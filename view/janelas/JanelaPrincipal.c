@@ -1,8 +1,23 @@
 //
-// Created by duce on 11/09/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #include "JanelaPrincipal.h"
+
+void dialogoAbrirTerminal(GtkWidget *widget, gpointer data, char *message) {
+    GtkWidget *dialog;
+    dialog = gtk_message_dialog_new(
+            GTK_WINDOW(janela_principal), GTK_DIALOG_DESTROY_WITH_PARENT,
+            GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
+            "%s", message
+    );
+
+    gtk_dialog_run (GTK_DIALOG (dialog));
+    gtk_widget_destroy (dialog);
+}
 
 void destroyJanelaPrincipal(GtkWidget *widget, gpointer data) {
     gtk_widget_destroy(widget);
@@ -13,22 +28,28 @@ void abrirJanelaBusca(GtkWidget *widget, gpointer data) {
     inicializaJanelaBusca(GTK_APPLICATION(g_application_get_default()), data);
 }
 
+void* inicializaPatricia() {
+    identifyTextos();
+}
+
 void abrirJanelaIndiceInvertido(GtkWidget *widget, gpointer data) {
-//    inicializaJanelaIndiceInvertido(GTK_APPLICATION(g_application_get_default()), data);
-
-    GtkWidget *dialog;
-    dialog = gtk_message_dialog_new(
-            GTK_WINDOW(janela_principal), GTK_DIALOG_DESTROY_WITH_PARENT,
-                GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
-                "Índice invertido construído."
-            );
-
-    gtk_dialog_run (GTK_DIALOG (dialog));
-    gtk_widget_destroy (dialog);
+    inicializaPatricia();
+    dialogoAbrirTerminal(widget, data, "Índice invertido construído com sucesso!");
 }
 
 void imprimirIndiceInvertido(GtkWidget *widget, gpointer data) {
     imprimeArvore(patricia);
+    dialogoAbrirTerminal(widget, data, "Imprimido! Cheque o terminal!");
+}
+
+void inserirPalavrasTST(GtkWidget * widget, gpointer data) {
+    inicializaDicionario();
+    dialogoAbrirTerminal(widget, data, "Palavras Inseridas com sucesso!");
+}
+
+void imprimirTST(GtkWidget *widget, gpointer data) {
+    mostraTST(dicionario);
+    dialogoAbrirTerminal(widget, data, "Imprimido! Cheque o terminal!");
 }
 
 void inicializaJanelaPrincipal(GtkApplication *app, gpointer userdata){
@@ -40,7 +61,9 @@ void inicializaJanelaPrincipal(GtkApplication *app, gpointer userdata){
                 "onDestroy", G_CALLBACK(destroyJanelaPrincipal),
                 "abrirJanelaBusca", G_CALLBACK(abrirJanelaBusca),
                 "abrirJanelaIndiceInvertido", G_CALLBACK(abrirJanelaIndiceInvertido),
+                "inserirPalavrasTST", G_CALLBACK(inserirPalavrasTST),
                 "imprimirIndiceInvertido", G_CALLBACK(imprimirIndiceInvertido),
+                "imprimirTST", G_CALLBACK(imprimirTST),
                 NULL
             );
     gtk_builder_connect_signals(builder, NULL);

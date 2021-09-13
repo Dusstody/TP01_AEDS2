@@ -1,10 +1,11 @@
 //
-// Created by pedro on 22/08/2021.
+// Criado por:
+// * Jeniffer Laila - 3896
+// * Pedro Maia - 3878
+// * Gabriel Batista Custodio - 3879
 //
 
 #include "arquivoManipulate.h"
-
-
 
 int pontoTxt(char *palavra){
     int tamanho = strlen(palavra);
@@ -113,11 +114,10 @@ void identifyTextos(){
         }
     }
 
+    files = arquivosNomes;
+
     closedir(dir);
-
-    busca("quer todos", patricia, arquivosNomes.quantidade, arquivosNomes.nomesArq, arquivosNomes.idDocs);
 }
-
 
 void leitura(char *Nome_arquivo,int arquivo,TypeTree *arvore){
     FILE *file;

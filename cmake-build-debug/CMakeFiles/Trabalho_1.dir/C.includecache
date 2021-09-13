@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/Dicionario.c
+Dicionario.h
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/Dicionario.h
+
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/Dicionario.h
 stdio.h
 -
@@ -16,6 +20,10 @@ stdlib.h
 string.h
 -
 
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/IndexInverted.c
+IndexInverted.h
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/IndexInverted.h
+
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/IndexInverted.h
 stdio.h
 -
@@ -23,6 +31,10 @@ stdlib.h
 -
 string.h
 -
+
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/WordTad.c
+WordTad.h
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/WordTad.h
 
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/WordTad.h
 stdio.h
@@ -33,6 +45,10 @@ string.h
 -
 IndexInverted.h
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/IndexInverted.h
+
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/arquivoManipulate.c
+arquivoManipulate.h
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/arquivoManipulate.h
 
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/arquivoManipulate.h
 treePatricia.h
@@ -94,6 +110,10 @@ pthread.h
 ../../arquivoManipulate.h
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/arquivoManipulate.h
 
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaIndiceInvertido.c
+JanelaIndiceInvertido.h
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaIndiceInvertido.h
+
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaIndiceInvertido.h
 stdio.h
 -
@@ -121,6 +141,10 @@ JanelaBusca.h
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaBusca.h
 JanelaIndiceInvertido.h
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaIndiceInvertido.h
+
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaSelecaoPasta.c
+JanelaSelecaoPasta.h
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaSelecaoPasta.h
 
 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaSelecaoPasta.h
 stdio.h
