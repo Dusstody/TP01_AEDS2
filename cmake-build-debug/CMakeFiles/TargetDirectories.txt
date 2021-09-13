@@ -1,3 +1,3 @@
-/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles/Trabalho_1.dir
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles/Trabalho_1.dir

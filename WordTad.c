@@ -111,3 +111,24 @@ void imprimeWord(Word *word){
     imprimeIndexs(&word->index);
     printf("\n");
 }
+
+char* pegaPalavra(Word *word, char *palavra) {
+    int len, i;
+    Apontador auxiliar;
+
+    len = word->tamanho;
+
+    char saida[len];
+
+    i = 0; auxiliar = word->inicio;
+    while (auxiliar != NULL && auxiliar->letra != '\0') {
+        saida[i] = auxiliar->letra;
+
+        auxiliar = auxiliar->prox;
+        ++i;
+    }
+
+    printf("%s ", saida);
+
+    return palavra;
+}

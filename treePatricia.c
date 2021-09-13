@@ -119,6 +119,7 @@ TypeTree CriaNoExt(TipoChave chave){
 void busca(char *termoBusca, TypeTree no,int qtdDocumento,char nomeBase[20],int *idDocs){
     TipoChave chaves[strlen(termoBusca)/2];
     int position = 0;
+
     for(int i = 0;i< strlen(termoBusca);i++){
         Word termo;
         iniciaWord(&termo);
@@ -193,13 +194,14 @@ double relevancia(TypeTree no,TipoChave *termos,int qtdTermosBusca,int idDoc,int
 }
 
 TipoChave* search(TipoChave chave,TypeTree no){
-    TipoChave chaveVazia;
-    iniciaWord(&chaveVazia);
     if (EExterno(no)){
         if (wordCompare(&chave,&no->No.chave) == 0){
             return &no->No.chave;
         }
         else{
+            TipoChave chaveVazia;
+            iniciaWord(&chaveVazia);
+
             return &chaveVazia;
         }
     }
@@ -215,5 +217,17 @@ void imprimeArvore(treePatricia *no){
     else{
         imprimeArvore(no->No.NoInterno.esquerda);
         imprimeArvore(no->No.NoInterno.direita);
+    }
+}
+
+char** pegaPalavras(treePatricia *no, char **palavras, int index) {
+    if(EExterno(no)){
+        pegaPalavra(&no->No.chave, palavras[index]);
+        printf("%s\n", palavras[index]);
+        ++index;
+    }
+    else{
+        pegaPalavras(no->No.NoInterno.esquerda, palavras, index);
+        pegaPalavras(no->No.NoInterno.direita, palavras, index);
     }
 }

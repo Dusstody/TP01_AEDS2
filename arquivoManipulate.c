@@ -67,52 +67,66 @@ char* nomeBase(char *palavra){
 
 void identifyTextos(){
     DIR *dir;
+
+    int arquivo, *index;
+    char *name_arq;
+
     char diretorio[50];
     struct dirent *lsdir;
-    printf("Digite o diretorio dos arquivos (.txt) para leitura (usar uma pasta com apenas os arquivos de texto):");
-    scanf("%s",diretorio);
-    dir = opendir(diretorio);
-    TypeTree arvore;
-    iniciaPatricia(&arvore);
+
+//    printf("Digite o diretorio dos arquivos (.txt) para leitura (usar uma pasta com apenas os arquivos de texto):");
+//    scanf("%s",diretorio);
+//    dir = opendir(diretorio);
+
+    dir = opendir(diretorio_selecionado);
+
+    iniciaPatricia(&patricia);
     arquivos arquivosNomes;
+
     arquivosNomes.quantidade = 0;
     arquivosNomes.idDocs = (int*) malloc(100*sizeof(int));
+
     if(dir == NULL){
         printf("diretorio inexistente");
-    }
-    /* print all the files and directories within directory */
-    else {
+    } else {
         while ((lsdir = readdir(dir)) != NULL) {
-            if(pontoTxt(lsdir->d_name) == 1) {
-                if(arquivosNomes.quantidade == 0) {
+            if (pontoTxt(lsdir->d_name) == 1) {
+
+                if (arquivosNomes.quantidade == 0) {
                     char *nome = nomeBase(lsdir->d_name);
                     strcpy(arquivosNomes.nomesArq, nome);
                 }
-                char *name_arq = (char*) malloc(60*sizeof (char));
-                strcpy(name_arq,diretorio);
+
+                name_arq = (char*) malloc(80*sizeof (char));
+
+                strcpy(name_arq, diretorio_selecionado);
                 strcat(name_arq,"/");
-                strcat(name_arq,lsdir->d_name);
-                int arquivo = idDoc(lsdir->d_name);
+                strcat(name_arq, lsdir->d_name);
+
+                arquivo = idDoc(lsdir->d_name);
+
                 arquivosNomes.idDocs[arquivosNomes.quantidade] = arquivo;
-                leitura(name_arq,arquivo,&arvore);
+                leitura(name_arq, arquivo, &patricia);
                 arquivosNomes.quantidade++;
                 free(name_arq);
             }
         }
     }
+
     closedir(dir);
-    imprimeArvore(arvore);
-    busca("quer todos",arvore,arquivosNomes.quantidade,arquivosNomes.nomesArq,arquivosNomes.idDocs);
+
+    busca("quer todos", patricia, arquivosNomes.quantidade, arquivosNomes.nomesArq, arquivosNomes.idDocs);
 }
 
 
 void leitura(char *Nome_arquivo,int arquivo,TypeTree *arvore){
     FILE *file;
+
     file = fopen(Nome_arquivo,"r");
-    if(file == NULL){
+
+    if (file == NULL) {
         exit(1);
-    }
-    else{
+    } else{
         while (!feof(file)){
             Word palavraIn;
             iniciaWord(&palavraIn);

@@ -15,6 +15,9 @@
 
 #define MAX_SIZE 50
 #define MAXTAM 100000
+#define SIZE_LONGEST_WORD 50
+#define MAX_AMOUNT_COMPLETION 10
+
 typedef char TSTValue;
 typedef struct TSTNode *TSTNodePointer;
 
@@ -28,6 +31,8 @@ typedef struct TSTNode {
   TSTNodePointer right;
 } TSTNode;
 
+
+TSTNodePointer dicionario;
 
 /**
  Cria um nó TST, alocando memória e setando os dados iniciais
@@ -102,6 +107,8 @@ int nodeAmountTST(TSTNodePointer tree);
  @param tree Ponteiro para a árvore a ser analisada
  */
 void statsTST(TSTNodePointer tree);
+
+void inicializaDicionario();
 
 char** AutoFillTST(TSTNodePointer tree, char *termoPreenche,int *indice);
 void imprimeTermos(TSTNodePointer tree,char *termos,char *buffer,int index,char **Fill,int *position);

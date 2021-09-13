@@ -4,7 +4,9 @@
 
 #ifndef TRABALHO_1_ARQUIVOMANIPULATE_H
 #define TRABALHO_1_ARQUIVOMANIPULATE_H
+
 #include "treePatricia.h"
+#include "view/janelas/JanelaSelecaoPasta.h"
 #include <dirent.h>
 
 typedef struct{
@@ -12,6 +14,10 @@ typedef struct{
     char nomesArq[30];
     int *idDocs;
 }arquivos;
+
+TypeTree patricia;
+char **palavras_patricia;
+char **indices_patricia;
 
 char* nomeBase(char *palavra);
 int pontoTxt(char *palavra);

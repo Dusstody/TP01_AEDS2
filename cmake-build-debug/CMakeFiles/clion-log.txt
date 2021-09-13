@@ -1,4 +1,4 @@
-/snap/clion/163/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/pedro/CLionProjects/TP03_AEDS2
+/home/duce/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/duce/Code/TP1-Aeds2/TP01_AEDS2
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug
+-- Build files have been written to: /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug

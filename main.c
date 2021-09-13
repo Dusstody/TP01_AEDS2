@@ -2,34 +2,27 @@
 #include "arquivoManipulate.h"
 #include "Dicionario.h"
 
-int main(){
+#include "view/App.h"
+
+int ac;
+char **av;
+
+void* threadInterface () {
+    startApp(ac, av);
+}
+
+int main (int argc, char *argv[]){
 //    identifyTextos();
 //    leiturateste();
 
-    TSTNodePointer rootTST = NULL;
+    inicializaDicionario();
 
-    FILE *file;
-    file = fopen("wordsDictionary.txt","r");
-    if(file == NULL){
-        exit(1);
-    }
-    else{
-        while (!feof(file)){
-            char *palavra = (char*) malloc(50*sizeof(char));
-            fscanf(file,"%s", palavra);
-            insertNodeTST(&rootTST, palavra);
-            //printf("%s\n", palavra);
+    ac = argc;
+    av = argv;
 
-            free(palavra);
-        }
-//        printTST(rootTST);
-        int *indice = (int*) malloc(sizeof (int));
-        *indice = 0;
-        char **Fill = AutoFillTST(rootTST,"com",indice);
-        for (int i = 0;i< *indice;i++){
-            printf("%s\n",Fill[i]);
-        }
-    }
+    pthread_t thread_interface;
+    pthread_create(&thread_interface, NULL, threadInterface, NULL);
+    pthread_join(thread_interface, NULL);
 
     return 0;
 }

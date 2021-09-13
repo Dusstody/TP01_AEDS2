@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/163/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/duce/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/163/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/duce/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro/CLionProjects/TP03_AEDS2
+CMAKE_SOURCE_DIR = /home/duce/Code/TP1-Aeds2/TP01_AEDS2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/163/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/duce/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -78,7 +78,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/163/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/duce/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -273,6 +273,126 @@ treePatricia.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/treePatricia.c.s
 .PHONY : treePatricia.c.s
 
+view/App.o: view/App.c.o
+.PHONY : view/App.o
+
+# target to build an object file
+view/App.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/App.c.o
+.PHONY : view/App.c.o
+
+view/App.i: view/App.c.i
+.PHONY : view/App.i
+
+# target to preprocess a source file
+view/App.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/App.c.i
+.PHONY : view/App.c.i
+
+view/App.s: view/App.c.s
+.PHONY : view/App.s
+
+# target to generate assembly for a file
+view/App.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/App.c.s
+.PHONY : view/App.c.s
+
+view/janelas/JanelaBusca.o: view/janelas/JanelaBusca.c.o
+.PHONY : view/janelas/JanelaBusca.o
+
+# target to build an object file
+view/janelas/JanelaBusca.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.o
+.PHONY : view/janelas/JanelaBusca.c.o
+
+view/janelas/JanelaBusca.i: view/janelas/JanelaBusca.c.i
+.PHONY : view/janelas/JanelaBusca.i
+
+# target to preprocess a source file
+view/janelas/JanelaBusca.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.i
+.PHONY : view/janelas/JanelaBusca.c.i
+
+view/janelas/JanelaBusca.s: view/janelas/JanelaBusca.c.s
+.PHONY : view/janelas/JanelaBusca.s
+
+# target to generate assembly for a file
+view/janelas/JanelaBusca.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.s
+.PHONY : view/janelas/JanelaBusca.c.s
+
+view/janelas/JanelaIndiceInvertido.o: view/janelas/JanelaIndiceInvertido.c.o
+.PHONY : view/janelas/JanelaIndiceInvertido.o
+
+# target to build an object file
+view/janelas/JanelaIndiceInvertido.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.o
+.PHONY : view/janelas/JanelaIndiceInvertido.c.o
+
+view/janelas/JanelaIndiceInvertido.i: view/janelas/JanelaIndiceInvertido.c.i
+.PHONY : view/janelas/JanelaIndiceInvertido.i
+
+# target to preprocess a source file
+view/janelas/JanelaIndiceInvertido.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.i
+.PHONY : view/janelas/JanelaIndiceInvertido.c.i
+
+view/janelas/JanelaIndiceInvertido.s: view/janelas/JanelaIndiceInvertido.c.s
+.PHONY : view/janelas/JanelaIndiceInvertido.s
+
+# target to generate assembly for a file
+view/janelas/JanelaIndiceInvertido.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.s
+.PHONY : view/janelas/JanelaIndiceInvertido.c.s
+
+view/janelas/JanelaPrincipal.o: view/janelas/JanelaPrincipal.c.o
+.PHONY : view/janelas/JanelaPrincipal.o
+
+# target to build an object file
+view/janelas/JanelaPrincipal.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.o
+.PHONY : view/janelas/JanelaPrincipal.c.o
+
+view/janelas/JanelaPrincipal.i: view/janelas/JanelaPrincipal.c.i
+.PHONY : view/janelas/JanelaPrincipal.i
+
+# target to preprocess a source file
+view/janelas/JanelaPrincipal.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.i
+.PHONY : view/janelas/JanelaPrincipal.c.i
+
+view/janelas/JanelaPrincipal.s: view/janelas/JanelaPrincipal.c.s
+.PHONY : view/janelas/JanelaPrincipal.s
+
+# target to generate assembly for a file
+view/janelas/JanelaPrincipal.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.s
+.PHONY : view/janelas/JanelaPrincipal.c.s
+
+view/janelas/JanelaSelecaoPasta.o: view/janelas/JanelaSelecaoPasta.c.o
+.PHONY : view/janelas/JanelaSelecaoPasta.o
+
+# target to build an object file
+view/janelas/JanelaSelecaoPasta.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.o
+.PHONY : view/janelas/JanelaSelecaoPasta.c.o
+
+view/janelas/JanelaSelecaoPasta.i: view/janelas/JanelaSelecaoPasta.c.i
+.PHONY : view/janelas/JanelaSelecaoPasta.i
+
+# target to preprocess a source file
+view/janelas/JanelaSelecaoPasta.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.i
+.PHONY : view/janelas/JanelaSelecaoPasta.c.i
+
+view/janelas/JanelaSelecaoPasta.s: view/janelas/JanelaSelecaoPasta.c.s
+.PHONY : view/janelas/JanelaSelecaoPasta.s
+
+# target to generate assembly for a file
+view/janelas/JanelaSelecaoPasta.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Trabalho_1.dir/build.make CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.s
+.PHONY : view/janelas/JanelaSelecaoPasta.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -300,6 +420,21 @@ help:
 	@echo "... treePatricia.o"
 	@echo "... treePatricia.i"
 	@echo "... treePatricia.s"
+	@echo "... view/App.o"
+	@echo "... view/App.i"
+	@echo "... view/App.s"
+	@echo "... view/janelas/JanelaBusca.o"
+	@echo "... view/janelas/JanelaBusca.i"
+	@echo "... view/janelas/JanelaBusca.s"
+	@echo "... view/janelas/JanelaIndiceInvertido.o"
+	@echo "... view/janelas/JanelaIndiceInvertido.i"
+	@echo "... view/janelas/JanelaIndiceInvertido.s"
+	@echo "... view/janelas/JanelaPrincipal.o"
+	@echo "... view/janelas/JanelaPrincipal.i"
+	@echo "... view/janelas/JanelaPrincipal.s"
+	@echo "... view/janelas/JanelaSelecaoPasta.o"
+	@echo "... view/janelas/JanelaSelecaoPasta.i"
+	@echo "... view/janelas/JanelaSelecaoPasta.s"
 .PHONY : help
 
 

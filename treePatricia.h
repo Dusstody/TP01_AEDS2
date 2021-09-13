@@ -60,6 +60,8 @@ void imprimeArvore(treePatricia *no);
 char Caractere(int i,TipoChave chave);
 int Relacao(char a, char b);
 
+char** pegaPalavras(treePatricia *no, char **palavras, int index);
+
 void insercaoOrdena(relevance *relevancias,int tamanho);
 
 

@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/163/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/duce/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/163/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/duce/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro/CLionProjects/TP03_AEDS2
+CMAKE_SOURCE_DIR = /home/duce/Code/TP1-Aeds2/TP01_AEDS2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Trabalho_1.dir/depend.make
@@ -68,81 +68,146 @@ include CMakeFiles/Trabalho_1.dir/flags.make
 
 CMakeFiles/Trabalho_1.dir/IndexInverted.c.o: CMakeFiles/Trabalho_1.dir/flags.make
 CMakeFiles/Trabalho_1.dir/IndexInverted.c.o: ../IndexInverted.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Trabalho_1.dir/IndexInverted.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/IndexInverted.c.o -c /home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Trabalho_1.dir/IndexInverted.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/IndexInverted.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/IndexInverted.c
 
 CMakeFiles/Trabalho_1.dir/IndexInverted.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/IndexInverted.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.c > CMakeFiles/Trabalho_1.dir/IndexInverted.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/IndexInverted.c > CMakeFiles/Trabalho_1.dir/IndexInverted.c.i
 
 CMakeFiles/Trabalho_1.dir/IndexInverted.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/IndexInverted.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pedro/CLionProjects/TP03_AEDS2/IndexInverted.c -o CMakeFiles/Trabalho_1.dir/IndexInverted.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/IndexInverted.c -o CMakeFiles/Trabalho_1.dir/IndexInverted.c.s
 
 CMakeFiles/Trabalho_1.dir/treePatricia.c.o: CMakeFiles/Trabalho_1.dir/flags.make
 CMakeFiles/Trabalho_1.dir/treePatricia.c.o: ../treePatricia.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Trabalho_1.dir/treePatricia.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/treePatricia.c.o -c /home/pedro/CLionProjects/TP03_AEDS2/treePatricia.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Trabalho_1.dir/treePatricia.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/treePatricia.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/treePatricia.c
 
 CMakeFiles/Trabalho_1.dir/treePatricia.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/treePatricia.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pedro/CLionProjects/TP03_AEDS2/treePatricia.c > CMakeFiles/Trabalho_1.dir/treePatricia.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/treePatricia.c > CMakeFiles/Trabalho_1.dir/treePatricia.c.i
 
 CMakeFiles/Trabalho_1.dir/treePatricia.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/treePatricia.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pedro/CLionProjects/TP03_AEDS2/treePatricia.c -o CMakeFiles/Trabalho_1.dir/treePatricia.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/treePatricia.c -o CMakeFiles/Trabalho_1.dir/treePatricia.c.s
 
 CMakeFiles/Trabalho_1.dir/WordTad.c.o: CMakeFiles/Trabalho_1.dir/flags.make
 CMakeFiles/Trabalho_1.dir/WordTad.c.o: ../WordTad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Trabalho_1.dir/WordTad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/WordTad.c.o -c /home/pedro/CLionProjects/TP03_AEDS2/WordTad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Trabalho_1.dir/WordTad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/WordTad.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/WordTad.c
 
 CMakeFiles/Trabalho_1.dir/WordTad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/WordTad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pedro/CLionProjects/TP03_AEDS2/WordTad.c > CMakeFiles/Trabalho_1.dir/WordTad.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/WordTad.c > CMakeFiles/Trabalho_1.dir/WordTad.c.i
 
 CMakeFiles/Trabalho_1.dir/WordTad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/WordTad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pedro/CLionProjects/TP03_AEDS2/WordTad.c -o CMakeFiles/Trabalho_1.dir/WordTad.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/WordTad.c -o CMakeFiles/Trabalho_1.dir/WordTad.c.s
 
 CMakeFiles/Trabalho_1.dir/main.c.o: CMakeFiles/Trabalho_1.dir/flags.make
 CMakeFiles/Trabalho_1.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Trabalho_1.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/main.c.o -c /home/pedro/CLionProjects/TP03_AEDS2/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Trabalho_1.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/main.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/main.c
 
 CMakeFiles/Trabalho_1.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pedro/CLionProjects/TP03_AEDS2/main.c > CMakeFiles/Trabalho_1.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/main.c > CMakeFiles/Trabalho_1.dir/main.c.i
 
 CMakeFiles/Trabalho_1.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pedro/CLionProjects/TP03_AEDS2/main.c -o CMakeFiles/Trabalho_1.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/main.c -o CMakeFiles/Trabalho_1.dir/main.c.s
 
 CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o: CMakeFiles/Trabalho_1.dir/flags.make
 CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o: ../arquivoManipulate.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o -c /home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/arquivoManipulate.c
 
 CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.c > CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/arquivoManipulate.c > CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.i
 
 CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pedro/CLionProjects/TP03_AEDS2/arquivoManipulate.c -o CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/arquivoManipulate.c -o CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.s
 
 CMakeFiles/Trabalho_1.dir/Dicionario.c.o: CMakeFiles/Trabalho_1.dir/flags.make
 CMakeFiles/Trabalho_1.dir/Dicionario.c.o: ../Dicionario.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Trabalho_1.dir/Dicionario.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/Dicionario.c.o -c /home/pedro/CLionProjects/TP03_AEDS2/Dicionario.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Trabalho_1.dir/Dicionario.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/Dicionario.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/Dicionario.c
 
 CMakeFiles/Trabalho_1.dir/Dicionario.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/Dicionario.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pedro/CLionProjects/TP03_AEDS2/Dicionario.c > CMakeFiles/Trabalho_1.dir/Dicionario.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/Dicionario.c > CMakeFiles/Trabalho_1.dir/Dicionario.c.i
 
 CMakeFiles/Trabalho_1.dir/Dicionario.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/Dicionario.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pedro/CLionProjects/TP03_AEDS2/Dicionario.c -o CMakeFiles/Trabalho_1.dir/Dicionario.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/Dicionario.c -o CMakeFiles/Trabalho_1.dir/Dicionario.c.s
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.o: CMakeFiles/Trabalho_1.dir/flags.make
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.o: ../view/janelas/JanelaBusca.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaBusca.c
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaBusca.c > CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.i
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaBusca.c -o CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.s
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.o: CMakeFiles/Trabalho_1.dir/flags.make
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.o: ../view/janelas/JanelaPrincipal.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaPrincipal.c
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaPrincipal.c > CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.i
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaPrincipal.c -o CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.s
+
+CMakeFiles/Trabalho_1.dir/view/App.c.o: CMakeFiles/Trabalho_1.dir/flags.make
+CMakeFiles/Trabalho_1.dir/view/App.c.o: ../view/App.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Trabalho_1.dir/view/App.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/view/App.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/App.c
+
+CMakeFiles/Trabalho_1.dir/view/App.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/view/App.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/App.c > CMakeFiles/Trabalho_1.dir/view/App.c.i
+
+CMakeFiles/Trabalho_1.dir/view/App.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/view/App.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/App.c -o CMakeFiles/Trabalho_1.dir/view/App.c.s
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.o: CMakeFiles/Trabalho_1.dir/flags.make
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.o: ../view/janelas/JanelaIndiceInvertido.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaIndiceInvertido.c
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaIndiceInvertido.c > CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.i
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaIndiceInvertido.c -o CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.s
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.o: CMakeFiles/Trabalho_1.dir/flags.make
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.o: ../view/janelas/JanelaSelecaoPasta.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.o -c /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaSelecaoPasta.c
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaSelecaoPasta.c > CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.i
+
+CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duce/Code/TP1-Aeds2/TP01_AEDS2/view/janelas/JanelaSelecaoPasta.c -o CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.s
 
 # Object files for target Trabalho_1
 Trabalho_1_OBJECTS = \
@@ -151,7 +216,12 @@ Trabalho_1_OBJECTS = \
 "CMakeFiles/Trabalho_1.dir/WordTad.c.o" \
 "CMakeFiles/Trabalho_1.dir/main.c.o" \
 "CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o" \
-"CMakeFiles/Trabalho_1.dir/Dicionario.c.o"
+"CMakeFiles/Trabalho_1.dir/Dicionario.c.o" \
+"CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.o" \
+"CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.o" \
+"CMakeFiles/Trabalho_1.dir/view/App.c.o" \
+"CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.o" \
+"CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.o"
 
 # External object files for target Trabalho_1
 Trabalho_1_EXTERNAL_OBJECTS =
@@ -162,9 +232,14 @@ Trabalho_1: CMakeFiles/Trabalho_1.dir/WordTad.c.o
 Trabalho_1: CMakeFiles/Trabalho_1.dir/main.c.o
 Trabalho_1: CMakeFiles/Trabalho_1.dir/arquivoManipulate.c.o
 Trabalho_1: CMakeFiles/Trabalho_1.dir/Dicionario.c.o
+Trabalho_1: CMakeFiles/Trabalho_1.dir/view/janelas/JanelaBusca.c.o
+Trabalho_1: CMakeFiles/Trabalho_1.dir/view/janelas/JanelaPrincipal.c.o
+Trabalho_1: CMakeFiles/Trabalho_1.dir/view/App.c.o
+Trabalho_1: CMakeFiles/Trabalho_1.dir/view/janelas/JanelaIndiceInvertido.c.o
+Trabalho_1: CMakeFiles/Trabalho_1.dir/view/janelas/JanelaSelecaoPasta.c.o
 Trabalho_1: CMakeFiles/Trabalho_1.dir/build.make
 Trabalho_1: CMakeFiles/Trabalho_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Trabalho_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable Trabalho_1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Trabalho_1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -176,6 +251,6 @@ CMakeFiles/Trabalho_1.dir/clean:
 .PHONY : CMakeFiles/Trabalho_1.dir/clean
 
 CMakeFiles/Trabalho_1.dir/depend:
-	cd /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pedro/CLionProjects/TP03_AEDS2 /home/pedro/CLionProjects/TP03_AEDS2 /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug /home/pedro/CLionProjects/TP03_AEDS2/cmake-build-debug/CMakeFiles/Trabalho_1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/duce/Code/TP1-Aeds2/TP01_AEDS2 /home/duce/Code/TP1-Aeds2/TP01_AEDS2 /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug /home/duce/Code/TP1-Aeds2/TP01_AEDS2/cmake-build-debug/CMakeFiles/Trabalho_1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Trabalho_1.dir/depend
 

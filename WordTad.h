@@ -34,4 +34,6 @@ char letraCompare(char letra1,char letra2);
 void insereLetra(Word *word,char letra);
 void imprimeWord(Word *word);
 
+char* pegaPalavra(Word *word, char *palavra);
+
 #endif //TRABALHO_1_WORDTAD_H
